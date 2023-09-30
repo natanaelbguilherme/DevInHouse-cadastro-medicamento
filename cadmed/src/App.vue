@@ -1,16 +1,18 @@
 <template>
-  <div>
+  <div class="container">
     <Header />
     <FormularioNovoMedicamento @cadastrar="cadastrarMedicamento" />
-    <CardMedicamento
-      v-for="medicamento in listaMedicamentos"
-      :key="medicamento.id"
-      @favoritar="favoritarMedicamento"
-      :nome="medicamento.nome"
-      :laboratorio="medicamento.laboratorio"
-      :preco="medicamento.preco"
-      :id="medicamento.id"
-    />
+    <div class="cards">
+      <CardMedicamento
+        v-for="medicamento in listaMedicamentos"
+        :key="medicamento.id"
+        @favoritar="favoritarMedicamento"
+        :nome="medicamento.nome"
+        :laboratorio="medicamento.laboratorio"
+        :preco="medicamento.preco"
+        :id="medicamento.id"
+      />
+    </div>
   </div>
 </template>
 
@@ -53,4 +55,19 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.container {
+  display: flex;
+  flex-direction: column;
+  max-width: 840px;
+  margin: auto;
+  gap: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+</style>

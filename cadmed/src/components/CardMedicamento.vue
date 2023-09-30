@@ -1,11 +1,15 @@
 <template>
   <div class="container">
     <div class="card">
-      <button @click="$emit('favoritar', id)">favoritar</button>
-      <img src="" alt="" />
-      <span>nome {{ nome }}</span>
-      <span>laboratorio {{ laboratorio }}</span>
-      <span>preco {{ preco }}</span>
+      <img
+        src="https://saude.abril.com.br/wp-content/uploads/2018/12/remc3a9dio01-3.jpg?quality=85&strip=info&w=1280&h=720&crop=1"
+        alt="medicamento"
+      />
+      <div class="infos">
+        <span>Nome: {{ nome }}</span>
+        <span>Laboratorio: {{ laboratorio }}</span>
+        <span>Preco: {{ preco }}</span>
+      </div>
     </div>
   </div>
 </template>
@@ -21,8 +25,27 @@ export default {
   display: flex;
 }
 .card {
+  background-color: brown;
   display: flex;
   flex-direction: column;
-  width: calc(100% / 4);
+  align-items: center;
+  width: 200px;
+  height: 200px;
+  padding-bottom: 20px;
+  border-radius: 4px;
+}
+
+.card img {
+  width: 80%;
+  margin: auto;
+  border-radius: 4px;
+}
+
+.infos {
+  display: flex;
+  width: 80%;
+  flex-direction: column;
+  font-weight: bold;
+  color: white;
 }
 </style>

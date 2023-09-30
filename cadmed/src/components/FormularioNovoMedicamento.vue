@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="formulario">
     <label for="nome">Nome</label>
     <input type="text" id="nome" v-model="medicamento" />
 
@@ -21,10 +21,40 @@ export default {
     return {
       medicamento: "",
       laboratorio: "",
-      preco: 1,
+      preco: 0,
     };
   },
 };
 </script>
 
-<style></style>
+<style>
+.formulario {
+  display: flex;
+  width: 840px;
+  height: 40px;
+  margin: auto;
+  gap: 8px;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: brown;
+  padding: 10px;
+  border-radius: 4px;
+  color: white;
+  font-weight: bold;
+}
+
+.formulario input {
+  border: none;
+  border-radius: 4px;
+  padding: 3px;
+}
+
+.formulario button {
+  background-color: white;
+  border: none;
+  border-radius: 4px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+  font-weight: bold;
+  padding: 4px;
+}
+</style>
